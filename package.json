@@ -1,4 +1,7 @@
 {
+  "scripts": {
+    "open": "cypress open"
+  },
   "devDependencies": {
     "cypress": "^12.9.0",
     "eslint": "^8.38.0",
