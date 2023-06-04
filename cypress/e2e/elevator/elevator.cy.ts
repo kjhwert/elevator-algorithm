@@ -54,7 +54,7 @@ describe("엘리베이터 알고리즘", () => {
 
         expect(answer.floor).eq(15);
       });
-      it("모든 엘리베이터가 같은 층에 있는 경우 고유번호(index)가 낮은 엘리베이터가 우선 호출된다.", () => {
+      it("모든 엘리베이터가 같은 층에 있는 경우 고유번호(id)가 낮은 엘리베이터가 우선 호출된다.", () => {
         const elevatorFloors = [20, 20, 20, 20, 20];
 
         const answer = elevator.answer1(
