@@ -1,10 +1,12 @@
 export interface Elevator {
   id: number;
   floor: number;
+  isBeingRepaired: boolean;
 }
 
-const answer1 = (guestFloor: number, elevators: Elevator[]): Elevator => {
+const algorithmV1 = (guestFloor: number, elevators: Elevator[]): Elevator => {
   const [minDistanceElevator] = elevators
+    .filter((elevator) => !elevator.isBeingRepaired)
     .map((elevator) => ({
       ...elevator,
       distance: Math.abs(guestFloor - elevator.floor),
@@ -23,4 +25,4 @@ const answer1 = (guestFloor: number, elevators: Elevator[]): Elevator => {
   return elevator;
 };
 
-export default answer1;
+export default algorithmV1;
