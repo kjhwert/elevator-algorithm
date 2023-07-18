@@ -2,12 +2,13 @@ import Elevator from "./Elevator";
 
 class ElevatorSystem {
   #elevators: Elevator[];
+  selectedElevator: Elevator | null = null;
 
   constructor(elevators: Elevator[]) {
     this.#elevators = elevators;
   }
 
-  callElevator = (guestFloor: number): Elevator => {
+  callElevator = (guestFloor: number) => {
     const [closestElevator] = this.#elevators
       .filter((elevator) => !elevator.isBeingRepaired)
       .sort((a, b) => {
@@ -21,7 +22,8 @@ class ElevatorSystem {
         return aArrivalTime - bArrivalTime;
       });
 
-    return closestElevator;
+    closestElevator.addDestination(guestFloor);
+    this.selectedElevator = closestElevator;
   };
 }
 
