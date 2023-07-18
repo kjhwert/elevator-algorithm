@@ -28,7 +28,8 @@ describe("Question 1. EV를 호출했을 때 가장 가까운 EV가 호출되는
       const guestFloor = 1;
       const elevatorSystem = loadElevatorSystem([{ floor: 1 }, { floor: 2 }]);
 
-      const elevator = elevatorSystem.callElevator(guestFloor);
+      elevatorSystem.callElevator(guestFloor);
+      const elevator = elevatorSystem.getSelectedElevator();
 
       expect(elevator.id).eq(0);
     });
@@ -39,7 +40,8 @@ describe("Question 1. EV를 호출했을 때 가장 가까운 EV가 호출되는
         { floor: 2 },
       ]);
 
-      const elevator = elevatorSystem.callElevator(guestFloor);
+      elevatorSystem.callElevator(guestFloor);
+      const elevator = elevatorSystem.getSelectedElevator();
 
       expect(elevator.id).eq(1);
     });
@@ -48,7 +50,8 @@ describe("Question 1. EV를 호출했을 때 가장 가까운 EV가 호출되는
       const guestFloor = 30;
       const elevatorSystem = loadElevatorSystem([{ floor: 28 }, { floor: 29 }]);
 
-      const elevator = elevatorSystem.callElevator(guestFloor);
+      elevatorSystem.callElevator(guestFloor);
+      const elevator = elevatorSystem.getSelectedElevator();
 
       expect(elevator.id).eq(1);
     });
@@ -59,7 +62,8 @@ describe("Question 1. EV를 호출했을 때 가장 가까운 EV가 호출되는
         { floor: 29, isBeingRepaired: true },
       ]);
 
-      const elevator = elevatorSystem.callElevator(guestFloor);
+      elevatorSystem.callElevator(guestFloor);
+      const elevator = elevatorSystem.getSelectedElevator();
 
       expect(elevator.id).eq(0);
     });
@@ -73,7 +77,8 @@ describe("Question 1. EV를 호출했을 때 가장 가까운 EV가 호출되는
         { floor: 13 },
       ]);
 
-      const elevator = elevatorSystem.callElevator(guestFloor);
+      elevatorSystem.callElevator(guestFloor);
+      const elevator = elevatorSystem.getSelectedElevator();
 
       expect(elevator.id).eq(1);
     });
@@ -85,7 +90,8 @@ describe("Question 1. EV를 호출했을 때 가장 가까운 EV가 호출되는
         { floor: 13 },
       ]);
 
-      const elevator = elevatorSystem.callElevator(guestFloor);
+      elevatorSystem.callElevator(guestFloor);
+      const elevator = elevatorSystem.getSelectedElevator();
 
       expect(elevator.id).eq(2);
     });
@@ -99,7 +105,8 @@ describe("Question 1. EV를 호출했을 때 가장 가까운 EV가 호출되는
         { floor: 15 },
       ]);
 
-      const elevator = elevatorSystem.callElevator(guestFloor);
+      elevatorSystem.callElevator(guestFloor);
+      const elevator = elevatorSystem.getSelectedElevator();
 
       expect(elevator.id).eq(1);
     });
@@ -111,7 +118,8 @@ describe("Question 1. EV를 호출했을 때 가장 가까운 EV가 호출되는
         { floor: 15 },
       ]);
 
-      const elevator = elevatorSystem.callElevator(guestFloor);
+      elevatorSystem.callElevator(guestFloor);
+      const elevator = elevatorSystem.getSelectedElevator();
 
       expect(elevator.id).eq(0);
     });
@@ -126,7 +134,8 @@ describe("Question 1. EV를 호출했을 때 가장 가까운 EV가 호출되는
           { floor: 10 },
         ]);
 
-        const elevator = elevatorSystem.callElevator(guestFloor);
+        elevatorSystem.callElevator(guestFloor);
+        const elevator = elevatorSystem.getSelectedElevator();
 
         expect(elevator.id).eq(0);
       });
@@ -138,7 +147,8 @@ describe("Question 1. EV를 호출했을 때 가장 가까운 EV가 호출되는
           { floor: 10 },
         ]);
 
-        const elevator = elevatorSystem.callElevator(guestFloor);
+        elevatorSystem.callElevator(guestFloor);
+        const elevator = elevatorSystem.getSelectedElevator();
 
         expect(elevator.id).eq(1);
       });
@@ -150,7 +160,8 @@ describe("Question 1. EV를 호출했을 때 가장 가까운 EV가 호출되는
           { floor: 10 },
         ]);
 
-        const elevator = elevatorSystem.callElevator(guestFloor);
+        elevatorSystem.callElevator(guestFloor);
+        const elevator = elevatorSystem.getSelectedElevator();
 
         expect(elevator.id).eq(2);
       });
@@ -164,7 +175,8 @@ describe("Question 1. EV를 호출했을 때 가장 가까운 EV가 호출되는
           { floor: 12 },
         ]);
 
-        const elevator = elevatorSystem.callElevator(guestFloor);
+        elevatorSystem.callElevator(guestFloor);
+        const elevator = elevatorSystem.getSelectedElevator();
 
         expect(elevator.id).eq(1);
       });
@@ -176,7 +188,8 @@ describe("Question 1. EV를 호출했을 때 가장 가까운 EV가 호출되는
           { floor: 12 },
         ]);
 
-        const elevator = elevatorSystem.callElevator(guestFloor);
+        elevatorSystem.callElevator(guestFloor);
+        const elevator = elevatorSystem.getSelectedElevator();
 
         expect(elevator.id).eq(0);
       });
@@ -188,7 +201,8 @@ describe("Question 1. EV를 호출했을 때 가장 가까운 EV가 호출되는
           { floor: 11 },
         ]);
 
-        const elevator = elevatorSystem.callElevator(guestFloor);
+        elevatorSystem.callElevator(guestFloor);
+        const elevator = elevatorSystem.getSelectedElevator();
 
         expect(elevator.id).eq(2);
       });

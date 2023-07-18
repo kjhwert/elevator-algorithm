@@ -25,6 +25,8 @@ class ElevatorSystem {
     closestElevator.addDestination(guestFloor);
     this.selectedElevator = closestElevator;
   };
+
+  getSelectedElevator = () => this.selectedElevator;
 }
 
 export default ElevatorSystem;
