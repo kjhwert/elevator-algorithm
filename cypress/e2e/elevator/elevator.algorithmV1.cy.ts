@@ -30,7 +30,7 @@ describe("Question 1. EV를 호출했을 때 가장 가까운 EV가 호출되는
 
       const elevator = elevatorSystem.callElevator(guestFloor);
 
-      expect(elevator.floor).eq(1);
+      expect(elevator.id).eq(0);
     });
     it("손님은 1층, EV는 [1, 2] - 1층의 EV가 점검 중일 때 2층의 EV 호출", () => {
       const guestFloor = 1;
@@ -41,7 +41,7 @@ describe("Question 1. EV를 호출했을 때 가장 가까운 EV가 호출되는
 
       const elevator = elevatorSystem.callElevator(guestFloor);
 
-      expect(elevator.floor).eq(2);
+      expect(elevator.id).eq(1);
     });
 
     it("손님은 30층, EV는 [28, 29] - 29층 EV 호출", () => {
@@ -50,7 +50,7 @@ describe("Question 1. EV를 호출했을 때 가장 가까운 EV가 호출되는
 
       const elevator = elevatorSystem.callElevator(guestFloor);
 
-      expect(elevator.floor).eq(29);
+      expect(elevator.id).eq(1);
     });
     it("손님은 30층, EV는 [28, 29] - 29층 EV가 점검 중일 때 28층 EV 호출", () => {
       const guestFloor = 30;
@@ -61,7 +61,7 @@ describe("Question 1. EV를 호출했을 때 가장 가까운 EV가 호출되는
 
       const elevator = elevatorSystem.callElevator(guestFloor);
 
-      expect(elevator.floor).eq(28);
+      expect(elevator.id).eq(0);
     });
   });
   context("손님이 있는 층보다 위에 있는 EV가 가까울 때", () => {
@@ -75,7 +75,7 @@ describe("Question 1. EV를 호출했을 때 가장 가까운 EV가 호출되는
 
       const elevator = elevatorSystem.callElevator(guestFloor);
 
-      expect(elevator.floor).eq(12);
+      expect(elevator.id).eq(1);
     });
     it("손님은 10층, EV는 [5, 12, 13] - 12층 EV가 점검 중일 때 5층 EV 호출", () => {
       const guestFloor = 10;
@@ -87,7 +87,7 @@ describe("Question 1. EV를 호출했을 때 가장 가까운 EV가 호출되는
 
       const elevator = elevatorSystem.callElevator(guestFloor);
 
-      expect(elevator.floor).eq(13);
+      expect(elevator.id).eq(2);
     });
   });
   context("손님이 있는 층보다 아래에 있는 EV가 가까울 때", () => {
@@ -101,7 +101,7 @@ describe("Question 1. EV를 호출했을 때 가장 가까운 EV가 호출되는
 
       const elevator = elevatorSystem.callElevator(guestFloor);
 
-      expect(elevator.floor).eq(8);
+      expect(elevator.id).eq(1);
     });
     it("손님은 10층, EV는 [7, 8, 15] - 8층 EV가 점검 중일 때 7층 EV 호출", () => {
       const guestFloor = 10;
@@ -113,7 +113,7 @@ describe("Question 1. EV를 호출했을 때 가장 가까운 EV가 호출되는
 
       const elevator = elevatorSystem.callElevator(guestFloor);
 
-      expect(elevator.floor).eq(7);
+      expect(elevator.id).eq(0);
     });
   });
   context("손님과 동일한 거리의 EV가 여러대일 때", () => {
@@ -166,7 +166,7 @@ describe("Question 1. EV를 호출했을 때 가장 가까운 EV가 호출되는
 
         const elevator = elevatorSystem.callElevator(guestFloor);
 
-        expect(elevator.floor).eq(11);
+        expect(elevator.id).eq(1);
       });
       it("손님은 10층, EV는 [9, 11, 12] - 11층 EV가 점검 중일 때 9층 EV 호출", () => {
         const guestFloor = 10;
@@ -178,7 +178,7 @@ describe("Question 1. EV를 호출했을 때 가장 가까운 EV가 호출되는
 
         const elevator = elevatorSystem.callElevator(guestFloor);
 
-        expect(elevator.floor).eq(9);
+        expect(elevator.id).eq(0);
       });
       it("손님은 10층, EV는 [9, 11, 11] - 11층 EV(index 1)가 점검 중일 때 11층 EV(index 2) 호출", () => {
         const guestFloor = 10;
