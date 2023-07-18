@@ -26,7 +26,7 @@ class ElevatorSystem {
     this.selectedElevator = closestElevator;
   };
 
-  getSelectedElevator = () => this.selectedElevator;
+  getSelectedElevator = (): Elevator => this.selectedElevator;
 }
 
 export default ElevatorSystem;

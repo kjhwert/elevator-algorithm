@@ -5,7 +5,11 @@ export interface ElevatorProps {
   destinations?: number[];
 }
 
+const FLOOR_HEIGHT = 3; // 단위: m
+
 class Elevator {
+  static ELEVATOR_SPEED = 1; // 단위: m/s
+
   id: number;
   floor: number;
   isBeingRepaired: boolean;
@@ -19,8 +23,25 @@ class Elevator {
   }
 
   getArrivalTime = (guestFloor: number): number => {
-    return Math.abs(guestFloor - this.floor);
+    if (this.hasDestination()) {
+      /**
+       * TODO 목적지가 있는 경우에는, 해당 목적지에 갔다가 guestFloor에 오는 시간을 계산해야한다.
+       */
+      return (
+        Math.abs(this.destinations[0] - this.floor) *
+        FLOOR_HEIGHT *
+        Elevator.ELEVATOR_SPEED
+      );
+    }
+
+    return (
+      Math.abs(guestFloor - this.floor) * FLOOR_HEIGHT * Elevator.ELEVATOR_SPEED
+    );
   };
+
+  hasDestination = () => this.destinations.length > 0;
+
+  getDestinations = () => this.destinations;
 
   addDestination = (destination: number) => {
     this.destinations.push(destination);
